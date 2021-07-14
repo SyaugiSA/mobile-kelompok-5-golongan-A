@@ -14,12 +14,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< HEAD
 
         button1 = findViewById(R.id.button1);
         button1.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AktaActivity.class)));
-=======
-        int a;
->>>>>>> bfee79c6385bcbcfad62cb5d6b8f369150fbd1c8
     }
 }

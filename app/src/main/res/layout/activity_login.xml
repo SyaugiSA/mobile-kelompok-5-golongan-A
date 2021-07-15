@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/logosip"
+        android:layout_width="241dp"
+        android:layout_height="115dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/logo_sip" />
+
+    <EditText
+        android:id="@+id/form_email"
+        android:layout_width="250dp"
+        android:layout_height="51dp"
+        android:layout_below="@+id/logosip"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="112dp"
+        android:drawableLeft="@drawable/ic_orang"
+        android:background="@drawable/form_input" />
+
+    <ImageView
+        android:layout_width="92dp"
+        android:layout_height="54dp"
+        android:layout_below="@+id/logosip"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/bg_icon" />
+
+    <EditText
+        android:id="@+id/form_pass"
+        android:layout_width="250dp"
+        android:layout_height="51dp"
+        android:layout_below="@+id/form_email"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="112dp"
+        android:drawableLeft="@drawable/ic_kunci"
+        android:background="@drawable/form_input" />
+
+    <ImageView
+        android:layout_width="92dp"
+        android:layout_height="54dp"
+        android:layout_below="@+id/form_email"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/bg_icon" />
+
+    <TextView
+        android:id="@+id/lupa_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:textSize="14sp"
+        android:text="Lupa Password"
+        android:textColor="@color/white"
+        android:layout_below="@+id/form_pass"/>
+
+    <TextView
+        android:id="@+id/akun_baru"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="270dp"
+        android:textSize="14sp"
+        android:text="Buat Akun Baru"
+        android:textColor="@color/white"
+        android:layout_below="@+id/form_pass"/>
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="133dp"
+        android:layout_height="47dp"
+        android:layout_below="@+id/form_pass"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Masuk"
+        android:background="@drawable/btn_masuk" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="670dp"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#3798E4"
+        android:text="@string/footer"/>
+</RelativeLayout>

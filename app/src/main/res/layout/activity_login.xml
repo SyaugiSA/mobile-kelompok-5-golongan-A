@@ -24,6 +24,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginLeft="112dp"
         android:drawableLeft="@drawable/ic_orang"
+        android:paddingLeft="10dp"
         android:background="@drawable/form_input" />
 
     <ImageView
@@ -41,7 +42,7 @@
         android:layout_below="@+id/form_email"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="112dp"
-        android:drawableLeft="@drawable/ic_kunci"
+        android:paddingLeft="10dp"
         android:background="@drawable/form_input" />
 
     <ImageView
@@ -50,7 +51,10 @@
         android:layout_below="@+id/form_email"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="40dp"
-        android:src="@drawable/bg_icon" />
+        android:src="@drawable/bg_icon" >
+        <ImageView
+            android:drawableLeft="@drawable/ic_kunci"/>
+    </ImageView>
 
     <TextView
         android:id="@+id/lupa_pass"
@@ -85,11 +89,23 @@
         android:background="@drawable/btn_masuk" />
 
     <TextView
+        android:id="@+id/txt_tahun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="670dp"
         android:textSize="15sp"
-        android:layout_centerHorizontal="true"
-        android:textColor="#3798E4"
+        android:layout_marginLeft="60dp"
+        android:textColor="@color/white"
         android:text="@string/footer"/>
+
+    <TextView
+        android:id="@+id/txt_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="670dp"
+        android:textSize="15sp"
+        android:layout_marginLeft="100dp"
+        android:textColor="#1DA5E3"
+        android:text="SIP DISPENDUK KABUPATEN JEMBER"/>
+
 </RelativeLayout>

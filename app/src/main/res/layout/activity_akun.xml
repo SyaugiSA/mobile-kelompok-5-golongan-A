@@ -30,7 +30,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="KELUAR"
-            android:textColor="#D30B0B" />
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 

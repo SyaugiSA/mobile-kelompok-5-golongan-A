@@ -150,8 +150,6 @@
 
     </RelativeLayout>
 
-
-
     <Button
         android:id="@+id/btn_buka"
         android:layout_width="122dp"
@@ -159,6 +157,7 @@
         android:layout_below="@+id/bg_header"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/bg_btn_buka"
         android:text="Buka" />
 

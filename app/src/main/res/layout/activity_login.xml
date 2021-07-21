@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="670dp"
         android:textSize="15sp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="55dp"
         android:textColor="@color/white"
         android:text="@string/footer"/>
 
@@ -88,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="670dp"
         android:textSize="15sp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="110dp"
         android:textColor="#1DA5E3"
         android:text="SIP DISPENDUK KABUPATEN JEMBER"/>
 

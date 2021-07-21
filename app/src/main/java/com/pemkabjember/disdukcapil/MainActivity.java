@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Preferences preferences;
     private Button button1;
 
     @Override
@@ -15,13 +15,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button1 = findViewById(R.id.button1);
-        BelumLogin();
-    }
+        preferences = new Preferences(this);
 
-    private void BelumLogin() {
-        if(! Preferences.getLoggedInStatus(getBaseContext())){
-            startActivity(new Intent(getBaseContext(),LoginActivity.class));finish();
+        button1 = findViewById(R.id.button1);
+
+        if (preferences.getId() == null || preferences.getId().isEmpty()){
+            startActivity(new Intent(getBaseContext(), LoginActivity.class));
         }
     }
 }

@@ -30,16 +30,20 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="KELUAR"
-            android:textColor="@color/white" />
+            android:textColor="@color/red"
+            app:backgroundTint="#FFFFFF"
+            app:strokeColor="#FF0000"
+            app:strokeWidth="1px" />
 
     </RelativeLayout>
 
     <ImageButton
         android:id="@+id/btn_home"
-        android:layout_width="30dp"
+        android:layout_width="40dp"
         android:layout_height="42dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginLeft="78dp"
         android:layout_marginTop="600dp"
-        android:layout_marginLeft="80dp"
         android:background="@drawable/home1" />
     <TextView
         android:id="@+id/txt_home"
@@ -55,10 +59,11 @@
 
     <ImageButton
         android:id="@+id/btn_akun"
-        android:layout_width="30dp"
+        android:layout_width="34dp"
         android:layout_height="42dp"
+        android:layout_marginStart="297dp"
+        android:layout_marginLeft="297dp"
         android:layout_marginTop="600dp"
-        android:layout_marginLeft="300dp"
         android:background="@drawable/orang2" />
 
     <TextView

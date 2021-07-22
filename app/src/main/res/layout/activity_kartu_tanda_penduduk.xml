@@ -5,132 +5,176 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_header"
     tools:context=".KartuTandaPendudukActivity">
 
     <TextView
-        android:id="@+id/textview"
+        android:id="@+id/bg_header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="NAMA PENGGUNA"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="30dp"
+        android:textSize="25sp"
+        android:textColor="@color/white" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="489dp"
+        android:background="@drawable/bg_body"
+        android:layout_below="@+id/bg_header">
+
+        <TableRow
+            android:paddingTop="10px"
+            android:gravity="center"
+            android:layout_marginTop="20px">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_span="2"
+                android:text="Kartu Tanda Penduduk"
+                android:textColor="#890000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="30dip" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="No. Registrasi :"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginLeft="20dip"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/no_reg"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="TextView"
+                android:layout_weight="1" >
+
+            </TextView>
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_marginTop="20dip" >
+
+            <TextView android:text="Nama :"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"></TextView>
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="TextView"
+                android:layout_weight="1" >
+
+            </TextView>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="20dip" >
+
+            <TextView android:text="Status :"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"></TextView>
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="TextView"
+                android:layout_weight="1" >
+
+            </TextView>
+
+        </TableRow>
+
+
+        <TableRow
+            android:gravity="center"
+            android:layout_marginTop="50dip" >
+
+            <Button
+                android:id="@+id/save"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_baseline_insert_drive_file_24"
+                android:text="Detail"
+                android:textColor="@color/black"></Button>
+        </TableRow>
+
+    </TableLayout>
+
+
+    <ImageButton
+        android:id="@+id/btn_home"
+        android:layout_width="40dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginTop="600dp"
+        android:background="@drawable/home1" />
+    <TextView
+        android:id="@+id/txt_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:padding="5dp"
-        android:layout_marginTop="10dp"
-        android:text="KARTU TANDA PENDUDUK"
-        />
+        android:layout_below="@id/btn_home"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/beranda"/>
+
+    <ImageButton
+        android:id="@+id/btn_akun"
+        android:layout_width="34dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="297dp"
+        android:layout_marginLeft="297dp"
+        android:layout_marginTop="600dp"
+        android:background="@drawable/orang2" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/txt_akun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="104dp"
-        android:layout_marginTop="60dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="20dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="20dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="20dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView4"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="20dp"
-        android:text="TextView" />
-
-
-    <TextView
-        android:id="@+id/textView05"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView5"
-        android:layout_alignBottom="@+id/textView5"
-        android:layout_alignLeft="@+id/textView03"
-        android:text="Status" />
-
-    <TextView
-        android:id="@+id/textView03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignLeft="@+id/textView04"
-        android:text="Tanggal" />
-
-    <TextView
-        android:id="@+id/textView04"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/textView02"
-        android:text="Nama" />
-
-    <TextView
-        android:id="@+id/textView02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/textView01"
-        android:text="NIK" />
-
-    <TextView
-        android:id="@+id/textView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:text="No. Registrasi" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_below="@+id/textView5"
-        android:layout_marginTop="34dp"
-        android:text="Home"
-        android:textColor="@color/black"
-        style="?android:borderlessButtonStyle"
-        android:drawableLeft="@drawable/ic_baseline_home_24"/>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/textView05"
-        android:layout_below="@id/textView05"
-        android:layout_marginTop="34dp"
-        android:text="Detail"
-        android:textColor="@color/black"
-        style="?android:borderlessButtonStyle"
-        android:drawableLeft="@drawable/ic_baseline_insert_drive_file_24"/>
+        android:layout_below="@id/btn_akun"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/akun"/>
 
 
 </RelativeLayout>

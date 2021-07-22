@@ -62,8 +62,8 @@
             android:id="@+id/btn_kematian"
             android:layout_width="53dp"
             android:layout_height="36dp"
-            android:layout_marginStart="279dp"
-            android:layout_marginLeft="279dp"
+            android:layout_marginStart="288dp"
+            android:layout_marginLeft="288dp"
             android:layout_marginTop="19dp"
             android:background="@drawable/kematian1" />
 
@@ -72,7 +72,7 @@
             android:layout_width="51dp"
             android:layout_height="35dp"
             android:layout_below="@id/btn_akta"
-            android:layout_marginStart="31dp"
+            android:layout_marginStart="37dp"
             android:layout_marginLeft="31dp"
             android:layout_marginTop="85dp"
             android:background="@drawable/kartukeluarga1" />
@@ -82,7 +82,7 @@
             android:layout_width="37dp"
             android:layout_height="36dp"
             android:layout_below="@id/btn_ktp"
-            android:layout_marginStart="169dp"
+            android:layout_marginStart="174dp"
             android:layout_marginLeft="169dp"
             android:layout_marginTop="85dp"
             android:background="@drawable/kia1" />
@@ -127,6 +127,7 @@
             android:layout_marginTop="13dp"
             android:gravity="center_horizontal"
             android:text="Cek Status Akta Kematian"
+            android:drawableLeft="@drawable/ic_segera"
             android:textAlignment="center"
             android:textColor="#1A194D"
             android:textSize="15sp"
@@ -134,12 +135,13 @@
 
         <TextView
             android:id="@+id/text_kk"
-            android:layout_width="106dp"
-            android:layout_height="51dp"
+            android:layout_width="116dp"
+            android:layout_height="61dp"
             android:layout_below="@id/btn_kk"
-            android:layout_marginStart="2dp"
+            android:layout_marginStart="1dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="15dp"
+            android:drawableLeft="@drawable/ic_segera"
             android:gravity="center_horizontal"
             android:text="Cek Status Kartu Keluarga"
             android:textAlignment="center"
@@ -149,12 +151,13 @@
 
         <TextView
             android:id="@+id/text_kia"
-            android:layout_width="80dp"
-            android:layout_height="44dp"
+            android:layout_width="104dp"
+            android:layout_height="52dp"
             android:layout_below="@id/btn_kia"
-            android:layout_marginStart="147dp"
+            android:layout_marginStart="135dp"
             android:layout_marginLeft="147dp"
             android:layout_marginTop="15dp"
+            android:drawableLeft="@drawable/ic_segera"
             android:gravity="center_horizontal"
             android:text="Cek Status KIA"
             android:textAlignment="center"

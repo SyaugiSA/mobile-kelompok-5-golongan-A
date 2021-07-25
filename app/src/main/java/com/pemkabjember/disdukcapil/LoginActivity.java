@@ -69,12 +69,12 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         /*menuju halaman registerasi jika tombol registrasi disentuh*/
-//        registerButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getBaseContext(),RegisterActivity.class));
-//            }
-//        });
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(),RegisterActivity.class));
+            }
+        });
     }
 
     /**check inputan user*/
@@ -94,53 +94,38 @@ public class LoginActivity extends AppCompatActivity {
             formPassword.setError("Form ini tidak boleh kosong");
             fokus = formPassword;
             cancel = true;
+        }else if(!cekPassword(password)){
+            formPassword.setError("Password salah");
+            fokus = formPassword;
+            cancel = true;
         }
+
         if (TextUtils.isEmpty(id)){
             formEmail.setError("Form ini tidak boleh kosong");
+            fokus = formEmail;
+            cancel = true;
+        }else if(!cekUser(id)){
+            formEmail.setError("Akun tidak tersedia");
             fokus = formEmail;
             cancel = true;
         }
 
         if(cancel) fokus.requestFocus();
-
-        String Url = dataApi.login;
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        requestQueue.getCache().clear();
-//                        try {
-//                            JSONObject jsonObject = new JSONObject(response);
-//                            if (jsonObject.optString("user").equals("user")) {
-//                                JSONObject jsonObject1 = jsonObject.getJSONObject("user");
-//                                preferences.setId((jsonObject1.getString("id")));
-//
-//                                Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_LONG).show();
-//                                startActivity(new Intent(getBaseContext(), MainActivity.class));
-//                                finish();
-//                            } else {
-//                                Toast.makeText(LoginActivity.this, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
-//                            }
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(LoginActivity.this,error.toString(), Toast.LENGTH_LONG).show();
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams()  {
-                Map<String, String> params = new HashMap<>();
-                params.put("id", formEmail.getText().toString());
-                params.put("password", formPassword.getText().toString());
-                return params;
-            }
-        };
-        requestQueue = Volley.newRequestQueue(LoginActivity.this);
-        requestQueue.add(stringRequest);
+        else masuk();
     }
+
+    private boolean cekUser(String id) {
+        return id.equals(Preferences.getRegisteredUser(getBaseContext()));
+    }
+
+    private boolean cekPassword(String password) {
+        return password.equals(Preferences.getRegisteredPass(getBaseContext()));
+    }
+
+    private void masuk() {
+        Preferences.setLoggedInUser(getBaseContext(),Preferences.getRegisteredUser(getBaseContext()));
+        Preferences.etLoggedInStatus(getBaseContext(), true);
+        startActivity(new Intent(getBaseContext(),MainActivity.class));finish();
+    }
+
 }

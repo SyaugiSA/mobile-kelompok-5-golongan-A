@@ -53,7 +53,7 @@
                 ></TextView>
 
             <TextView
-                android:id="@+id/no_reg"
+                    android:id="@+id/no_reg"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dip"
                 android:layout_marginRight="20dip"

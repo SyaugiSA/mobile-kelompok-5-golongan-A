@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getBaseContext(), MainActivity.class));
+                finish();
             }
         });
 

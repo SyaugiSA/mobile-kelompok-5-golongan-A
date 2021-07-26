@@ -11,49 +11,89 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class AktaActivity extends AppCompatActivity {
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 
-    protected Cursor cursor;
-    DataHelper dbHelper;
-    Button ton1, ton2;
-    TextView text1, text2, text3, text4, text5;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class AktaActivity extends AppCompatActivity {
+    RequestQueue requestQueue;
+    TextView user, noReg, Nama, Status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_akta);
 
-        dbHelper = new DataHelper(this);
-        text1 = findViewById(R.id.textView1);
-        text2 = findViewById(R.id.textView2);
-        text3 = findViewById(R.id.textView3);
-        text4 = findViewById(R.id.textView4);
-        text5 = findViewById(R.id.textView5);
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM dispenduk WHERE nama='" + getIntent().getStringExtra("nama") + "'", null);
-        cursor.moveToFirst();
-        if (cursor.getCount() > 0) {
-            cursor.moveToPosition(0);
-            text1.setText(cursor.getString(0).toString());
-            text2.setText(cursor.getString(1).toString());
-            text3.setText(cursor.getString(2).toString());
-            text4.setText(cursor.getString(3).toString());
-            text5.setText(cursor.getString(4).toString());
-        }
-        ton1 = findViewById(R.id.button1);
-        ton1.setOnClickListener(new View.OnClickListener() {
+        user = findViewById(R.id.bg_header);
+        user.setText(Preferences.getLoggedInUser(getBaseContext()));
+
+        noReg = findViewById(R.id.no_reg);
+        Nama = findViewById(R.id.nama);
+        Status = findViewById(R.id.status);
+
+        jsonData();
+
+        findViewById(R.id.save).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) {
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), DetailAktaActivity.class));
+            }
+        });
+
+        findViewById(R.id.btn_home).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), MainActivity.class));
                 finish();
             }
         });
-        ton2 = findViewById(R.id.button2);
-        ton2.setOnClickListener(new View.OnClickListener() {
+
+        findViewById(R.id.btn_akun).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(AktaActivity.this, DetailAktaActivity.class);
-                startActivity(intent);
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), AkunActivity.class));
             }
         });
+    }
+
+    private void jsonData() {
+//        String url = dataApi.api+"/aktakelahiran/"+user;
+//
+//        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+//                new Response.Listener<JSONObject>() {
+//                    @Override
+//                    public void onResponse(JSONObject response) {
+//                        try {
+//                            JSONArray array = response.getJSONArray("aktakelahiran");
+//
+//                            for (int i = 0; i <= array.length(); i++) {
+//                                JSONObject nik = array.getJSONObject(i);
+//
+//                                String no_reg = nik.getString("No_Reg");
+//                                String nama = nik.getString("nama_lengkap");
+//                                String status = nik.getString("status");
+//
+////                                noReg.append(no_reg);
+////                                Nama.setText(nama);
+////                                Status.setText(status);
+//                            }
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                error.printStackTrace();
+//            }
+//        });
+//        requestQueue.add(request);
     }
 }

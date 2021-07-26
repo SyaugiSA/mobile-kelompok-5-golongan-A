@@ -34,7 +34,6 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     Button loginButton;
     EditText formEmail, formPassword;
-    TextView register;
     private RequestQueue requestQueue;
     private Preferences preferences;
 
@@ -46,7 +45,6 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.button_login);
         formEmail = findViewById(R.id.form_email);
         formPassword = findViewById(R.id.form_pass);
-        register = findViewById(R.id.akun_baru);
 
         /*menjalankan method actionLogin() jika tombol signIn di keyboard disentuh*/
         formPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -69,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         /*menuju halaman registerasi jika tombol registrasi disentuh*/
-        register.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.button_register).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getBaseContext(),RegisterActivity.class));
